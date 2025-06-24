@@ -1,0 +1,293 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Will refine font choice later */
+    line-height: 1.6;
+    color: #ccc; /* Light grey text for dark theme */
+    background-color: #1a1a1a; /* Dark background */
+    padding-top: 70px; /* Space for fixed header */
+}
+
+a {
+    color: #4da6ff; /* Accent color for links - vibrant blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #111; /* Slightly darker than body for header */
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #4da6ff; /* Accent border */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Basic active state, can be improved with JS */
+    color: #4da6ff; /* Accent color on hover/active */
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    background-color: #262626; /* Slightly lighter dark shade for sections */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+section h1, section h2, section h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #333; /* Different bg for hero, or image later */
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* CTA button styling */
+.cta-button, .read-more-btn {
+    display: inline-block;
+    background-color: #4da6ff; /* Accent color */
+    color: #fff;
+    padding: 10px 20px; /* Adjusted padding for read more */
+    font-size: 1rem;   /* Adjusted font size for read more */
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* remove default border for button-like links */
+    cursor: pointer;
+}
+
+.cta-button:hover, .read-more-btn:hover {
+    background-color: #3c8de0; /* Darker shade on hover */
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.latest-posts-section .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.latest-posts-section .post-preview {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-posts-section .post-preview h3 {
+    font-size: 1.3rem;
+    color: #4da6ff; /* Accent color for post titles */
+    margin-bottom: 10px;
+}
+
+.latest-posts-section .post-preview p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Makes paragraph take available space */
+}
+
+.latest-posts-section .read-more-btn {
+    align-self: flex-start; /* Aligns button to the left */
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+
+.top-features-section ul.features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.top-features-section ul.features-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #444;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.top-features-section ul.features-list li:last-child {
+    border-bottom: none;
+}
+
+.top-features-section .feature-icon {
+    margin-right: 15px;
+    font-size: 1.5rem; /* Make icons a bit larger */
+    color: #4da6ff; /* Accent color for icons */
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #111;
+    color: #aaa;
+    border-top: 2px solid #4da6ff; /* Accent border */
+    margin-top: 40px;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.footer-content a {
+    color: #bbb; /* Lighter grey for footer links */
+    margin: 0 5px;
+}
+
+.footer-content a:hover {
+    color: #4da6ff; /* Accent color on hover */
+}
+
+.trust-signals {
+    margin: 15px 0;
+    font-size: 0.9rem;
+}
+
+.trust-signals span {
+    margin: 0 10px;
+    display: inline-block; /* Allows for margin */
+}
+
+.footer-content small {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Basic Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block; /* Make links take full width for easier tapping */
+        padding: 10px;
+        background-color: #222; /* Slight background for nav items on mobile */
+        border-radius: 4px;
+    }
+    nav ul li a:hover {
+        background-color: #4da6ff;
+        color: #111;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    .latest-posts-section .post-grid {
+        grid-template-columns: 1fr; /* Stack posts on smaller screens */
+    }
+
+    .footer-content .trust-signals span {
+        display: block; /* Stack trust signals on mobile */
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 0; /* Remove padding if header becomes static or handled differently */
+    }
+    header { /* Example: make header static on very small screens if fixed becomes problematic */
+        position: relative;
+    }
+    nav {
+        padding-bottom: 10px; /* Add some space if logo and menu stack */
+    }
+    nav .logo a {
+        font-size: 1.3rem;
+    }
+    .cta-button, .read-more-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
